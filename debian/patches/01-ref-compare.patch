@@ -1,0 +1,17 @@
+Description: Fix a compilation error
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2017-03-17
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/src/main/interactive_shell.cpp
++++ b/src/main/interactive_shell.cpp
+@@ -104,7 +104,7 @@
+   }
+ 
+ #if HAVE_LIBREADLINE
+-  if(d_in == cin) {
++  if(&d_in == &cin) {
+     ::rl_readline_name = const_cast<char*>("CVC4");
+ #if READLINE_COMPENTRY_FUNC_RETURNS_CHARP
+     ::rl_completion_entry_function = commandGenerator;

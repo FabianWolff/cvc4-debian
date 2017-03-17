@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_CPPFLAGS_MAINT_APPEND = \
+	-DDEB_BUILD_DATE="\"$(shell dpkg-parsechangelog -SDate | date -f- +%F)\"" \
+	-DDEB_BUILD_TIME="\"$(shell dpkg-parsechangelog -SDate | date -f- +%T)\""
+
+%:
+	dh $@ --parallel --with autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-static --enable-shared                 \
+		--with-build=production --enable-gpl --with-portfolio        \
+		--enable-unit-testing --with-readline --without-compat
+
+override_dh_install:
+	chrpath -d debian/tmp/usr/bin/pcvc4
+	dh_install

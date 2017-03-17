@@ -1,0 +1,96 @@
+Source: cvc4
+Maintainer: Fabian Wolff <fabi.wolff@arcor.de>
+Section: math
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               libgmp-dev,
+               libantlr3c-dev,
+               libboost-thread-dev,
+               libreadline-dev,
+               pkg-config,
+               cxxtest,
+               chrpath
+Standards-Version: 3.9.8
+Homepage: http://cvc4.cs.stanford.edu/web/
+
+Package: cvc4
+Architecture: any
+Depends: libcvc4-3 (= ${binary:Version}),
+         libcvc4parser3 (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: automated theorem prover for SMT problems
+ CVC4 is an efficient automatic theorem prover for satisfiability
+ modulo theories (SMT) problems. It can be used to prove the validity
+ (or, dually, the satisfiability) of first-order formulas in a large
+ number of built-in logical theories and their combination.
+ .
+ CVC4 is intended to be an open and extensible SMT engine, and it can
+ be used as a stand-alone tool or as a library. It is the fourth in
+ the Cooperating Validity Checker family of tools (also including CVC,
+ CVC Lite and CVC3). CVC4 has been designed to increase the
+ performance and reduce the memory overhead of its predecessors.
+ .
+ This package contains binaries needed to use CVC4 as a stand-alone
+ tool.
+
+Package: libcvc4-dev
+Architecture: any
+Section: libdevel
+Depends: libcvc4-3 (= ${binary:Version}),
+         libcvc4parser3 (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: automated theorem prover for SMT problems (development files)
+ CVC4 is an efficient automatic theorem prover for satisfiability
+ modulo theories (SMT) problems. It can be used to prove the validity
+ (or, dually, the satisfiability) of first-order formulas in a large
+ number of built-in logical theories and their combination.
+ .
+ CVC4 is intended to be an open and extensible SMT engine, and it can
+ be used as a stand-alone tool or as a library. It is the fourth in
+ the Cooperating Validity Checker family of tools (also including CVC,
+ CVC Lite and CVC3). CVC4 has been designed to increase the
+ performance and reduce the memory overhead of its predecessors.
+ .
+ This package contains development files for CVC4. Install it if you
+ want to develop applications that use CVC4's API.
+
+Package: libcvc4-3
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: automated theorem prover for SMT problems (runtime)
+ CVC4 is an efficient automatic theorem prover for satisfiability
+ modulo theories (SMT) problems. It can be used to prove the validity
+ (or, dually, the satisfiability) of first-order formulas in a large
+ number of built-in logical theories and their combination.
+ .
+ CVC4 is intended to be an open and extensible SMT engine, and it can
+ be used as a stand-alone tool or as a library. It is the fourth in
+ the Cooperating Validity Checker family of tools (also including CVC,
+ CVC Lite and CVC3). CVC4 has been designed to increase the
+ performance and reduce the memory overhead of its predecessors.
+ .
+ This package contains CVC4's runtime shared libraries.
+
+Package: libcvc4parser3
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: automated theorem prover for SMT problems (parser runtime)
+ CVC4 is an efficient automatic theorem prover for satisfiability
+ modulo theories (SMT) problems. It can be used to prove the validity
+ (or, dually, the satisfiability) of first-order formulas in a large
+ number of built-in logical theories and their combination.
+ .
+ CVC4 is intended to be an open and extensible SMT engine, and it can
+ be used as a stand-alone tool or as a library. It is the fourth in
+ the Cooperating Validity Checker family of tools (also including CVC,
+ CVC Lite and CVC3). CVC4 has been designed to increase the
+ performance and reduce the memory overhead of its predecessors.
+ .
+ This package contains runtime shared libraries for CVC4's parser.

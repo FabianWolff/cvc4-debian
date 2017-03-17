@@ -1,0 +1,208 @@
+Description: Fix spelling errors found by Lintian
+Author: Fabian Wolff <fabi.wolff@arcor.de>
+Forwarded: no
+Last-Update: 2017-03-17
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/doc/cvc4.1
++++ b/doc/cvc4.1
+@@ -176,7 +176,7 @@
+ .IP "\-\-replay\-reject\-cut"
+ maximum complexity of any coefficient while replaying cuts
+ .IP "\-\-replay\-lemma\-reject\-cut"
+-maximum complexity of any coefficient while outputing replaying cut lemmas
++maximum complexity of any coefficient while outputting replaying cut lemmas
+ .IP "\-\-replay\-soi\-major\-threshold"
+ threshold for a major tolerance failure by the approximate solver
+ .IP "\-\-replay\-soi\-major\-threshold\-pen"
+@@ -784,38 +784,38 @@
+ .IP "\-\-model\-u\-dt\-enum"
+ in models, output uninterpreted sorts as datatype enumerations [*]
+ .IP "\-\-rewrite\-step"
+-ammount of resources spent for each rewrite step (EXPERTS only)
++amount of resources spent for each rewrite step (EXPERTS only)
+ .IP "\-\-theory\-check\-step"
+-ammount of resources spent for each theory check call (EXPERTS only)
++amount of resources spent for each theory check call (EXPERTS only)
+ .IP "\-\-decision\-step"
+-ammount of getNext decision calls in the decision engine (EXPERTS only)
++amount of getNext decision calls in the decision engine (EXPERTS only)
+ 
+ .IP "\-\-bitblast\-step"
+-ammount of resources spent for each bitblast step (EXPERTS only)
++amount of resources spent for each bitblast step (EXPERTS only)
+ 
+ .IP "\-\-parse\-step"
+-ammount of resources spent for each command/expression parsing (EXPERTS only)
++amount of resources spent for each command/expression parsing (EXPERTS only)
+ 
+ .IP "\-\-lemma\-step"
+-ammount of resources spent when adding lemmas (EXPERTS only)
++amount of resources spent when adding lemmas (EXPERTS only)
+ 
+ .IP "\-\-restart\-step"
+-ammount of resources spent for each theory restart (EXPERTS only)
++amount of resources spent for each theory restart (EXPERTS only)
+ 
+ .IP "\-\-cnf\-step"
+-ammount of resources spent for each call to cnf conversion (EXPERTS only)
++amount of resources spent for each call to cnf conversion (EXPERTS only)
+ 
+ .IP "\-\-preprocess\-step"
+-ammount of resources spent for each preprocessing step in SmtEngine (EXPERTS only)
++amount of resources spent for each preprocessing step in SmtEngine (EXPERTS only)
+ 
+ .IP "\-\-quantifier\-step"
+-ammount of resources spent for quantifier instantiations (EXPERTS only)
++amount of resources spent for quantifier instantiations (EXPERTS only)
+ 
+ .IP "\-\-sat\-conflict\-step"
+-ammount of resources spent for each sat conflict (main sat solver) (EXPERTS only)
++amount of resources spent for each sat conflict (main sat solver) (EXPERTS only)
+ 
+ .IP "\-\-bv\-sat\-conflict\-step"
+-ammount of resources spent for each sat conflict (bitvectors) (EXPERTS only)
++amount of resources spent for each sat conflict (bitvectors) (EXPERTS only)
+ 
+ 
+ .IP "\-\-rewrite\-apply\-to\-const"
+--- a/proofs/signatures/signatures.cpp
++++ b/proofs/signatures/signatures.cpp
+@@ -1359,7 +1359,7 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n\
+ \n\
+ ; bit blast  x = y\n\
+-; for x,y of size n, it will return a conjuction (x.0 = y.0 ^ ( ... ^ (x.{n-1} = y.{n-1})))\n\
++; for x,y of size n, it will return a conjunction (x.0 = y.0 ^ ( ... ^ (x.{n-1} = y.{n-1})))\n\
+ ; f is the accumulator formula that builds the equality in the right order\n\
+ (program bblast_eq_rec ((x bblt) (y bblt) (f formula)) formula\n\
+   (match x\n\
+--- a/proofs/signatures/th_bv_bitblast.plf
++++ b/proofs/signatures/th_bv_bitblast.plf
+@@ -425,7 +425,7 @@
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ 
+ ; bit blast  x = y
+-; for x,y of size n, it will return a conjuction (x.0 = y.0 ^ ( ... ^ (x.{n-1} = y.{n-1})))
++; for x,y of size n, it will return a conjunction (x.0 = y.0 ^ ( ... ^ (x.{n-1} = y.{n-1})))
+ ; f is the accumulator formula that builds the equality in the right order
+ (program bblast_eq_rec ((x bblt) (y bblt) (f formula)) formula
+   (match x
+--- a/src/options/arith_options
++++ b/src/options/arith_options
+@@ -135,7 +135,7 @@
+  maximum complexity of any coefficient while replaying cuts
+ 
+ option lemmaRejectCutSize --replay-lemma-reject-cut unsigned :default 25500
+- maximum complexity of any coefficient while outputing replaying cut lemmas
++ maximum complexity of any coefficient while outputting replaying cut lemmas
+ 
+ option soiApproxMajorFailure --replay-soi-major-threshold double :default .01
+  threshold for a major tolerance failure by the approximate solver
+--- a/src/options/options_handler.cpp
++++ b/src/options/options_handler.cpp
+@@ -958,7 +958,7 @@
+ Bit-blasting modes currently supported by the --bitblast option:\n\
+ \n\
+ lazy (default)\n\
+-+ Separate boolean structure and term reasoning betwen the core\n\
+++ Separate boolean structure and term reasoning between the core\n\
+   SAT solver and the bv SAT solver\n\
+ \n\
+ eager\n\
+--- a/src/options/smt_options
++++ b/src/options/smt_options
+@@ -108,40 +108,40 @@
+ 
+ # Resource spending options for SPARK
+ expert-option rewriteStep rewrite-step --rewrite-step unsigned :default 1
+- ammount of resources spent for each rewrite step
++ amount of resources spent for each rewrite step
+ 
+ expert-option theoryCheckStep theory-check-step --theory-check-step unsigned :default 1
+- ammount of resources spent for each theory check call
++ amount of resources spent for each theory check call
+ 
+ expert-option decisionStep decision-step --decision-step unsigned :default 1
+- ammount of getNext decision calls in the decision engine
++ amount of getNext decision calls in the decision engine
+  
+ expert-option bitblastStep bitblast-step --bitblast-step unsigned :default 1
+- ammount of resources spent for each bitblast step
++ amount of resources spent for each bitblast step
+  
+ expert-option parseStep parse-step --parse-step unsigned :default 1
+- ammount of resources spent for each command/expression parsing
++ amount of resources spent for each command/expression parsing
+  
+ expert-option lemmaStep lemma-step --lemma-step unsigned :default 1
+- ammount of resources spent when adding lemmas
++ amount of resources spent when adding lemmas
+  
+ expert-option restartStep restart-step --restart-step unsigned :default 1
+- ammount of resources spent for each theory restart
++ amount of resources spent for each theory restart
+  
+ expert-option cnfStep cnf-step --cnf-step unsigned :default 1
+- ammount of resources spent for each call to cnf conversion
++ amount of resources spent for each call to cnf conversion
+  
+ expert-option preprocessStep preprocess-step --preprocess-step unsigned :default 1
+- ammount of resources spent for each preprocessing step in SmtEngine
++ amount of resources spent for each preprocessing step in SmtEngine
+  
+ expert-option quantifierStep quantifier-step --quantifier-step unsigned :default 1
+- ammount of resources spent for quantifier instantiations
++ amount of resources spent for quantifier instantiations
+  
+ expert-option satConflictStep sat-conflict-step --sat-conflict-step unsigned :default 1
+- ammount of resources spent for each sat conflict (main sat solver)
++ amount of resources spent for each sat conflict (main sat solver)
+  
+ expert-option bvSatConflictStep bv-sat-conflict-step --bv-sat-conflict-step unsigned :default 1
+- ammount of resources spent for each sat conflict (bitvectors)
++ amount of resources spent for each sat conflict (bitvectors)
+  
+  
+ expert-option rewriteApplyToConst rewrite-apply-to-const --rewrite-apply-to-const bool :default false
+--- a/src/theory/arith/arith_rewriter.cpp
++++ b/src/theory/arith/arith_rewriter.cpp
+@@ -210,7 +210,7 @@
+         // Todo improve the exception thrown
+         std::stringstream ss;
+         ss << "The POW(^) operator can only be used with a natural number ";
+-        ss << "in the exponent.  Exception occured in:" << std::endl;
++        ss << "in the exponent.  Exception occurred in:" << std::endl;
+         ss << "  " << t;
+         throw LogicException(ss.str());
+       }
+--- a/src/theory/builtin/kinds
++++ b/src/theory/builtin/kinds
+@@ -302,7 +302,7 @@
+ 
+ operator LAMBDA 2 "a lambda expression; first parameter is a BOUND_VAR_LIST, second is lambda body"
+ 
+-parameterized CHAIN CHAIN_OP 2: "chained operator (N-ary), turned into a conjuction of binary applications of the operator on adjoining parameters; first parameter is a CHAIN_OP representing a binary operator, rest are arguments to that operator"
++parameterized CHAIN CHAIN_OP 2: "chained operator (N-ary), turned into a conjunction of binary applications of the operator on adjoining parameters; first parameter is a CHAIN_OP representing a binary operator, rest are arguments to that operator"
+ constant CHAIN_OP \
+     ::CVC4::Chain \
+     ::CVC4::ChainHashFunction \
+--- a/src/theory/strings/theory_strings_type_rules.h
++++ b/src/theory/strings/theory_strings_type_rules.h
+@@ -98,7 +98,7 @@
+     if( check ) {
+       TypeNode t = n[0].getType(check);
+       if (!t.isString()) {
+-        throw TypeCheckingExceptionPrivate(n, "expecting an orginal string term in string contain");
++        throw TypeCheckingExceptionPrivate(n, "expecting an original string term in string contain");
+       }
+       t = n[1].getType(check);
+       if (!t.isString()) {
+--- a/test/regress/regress0/arith/bug716.1.cvc
++++ b/test/regress/regress0/arith/bug716.1.cvc
+@@ -1,4 +1,4 @@
+-% EXPECT: The POW(^) operator can only be used with a natural number in the exponent.  Exception occured in:
++% EXPECT: The POW(^) operator can only be used with a natural number in the exponent.  Exception occurred in:
+ % EXPECT:   2 ^ x
+ % EXIT: 1
+ x: INT;

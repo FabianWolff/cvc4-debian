@@ -1,0 +1,5 @@
+cvc4 (1.5~pre-20170316) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: #757048)
+
+ -- Fabian Wolff <fabi.wolff@arcor.de>  Thu, 16 Mar 2017 17:18:54 +0100
